@@ -8,8 +8,16 @@
         <%@ include file="../layout/link.jsp" %>
 
         <form action="/login" method="post">
-            <input type="text" name="username" placeholder="Enter username" required><br />
-            <input type="password" name="password" placeholder="Enter password" required><br />
+            <table border="1">
+                <tr>
+                    <th>유저네임</th>
+                    <td><input type="text" name="username" placeholder="Enter username" required></td>
+                </tr>
+                <tr>
+                    <th>패스워드</th>
+                    <td><input type="password" name="password" placeholder="Enter password" required></td>
+                </tr>
+            </table>
             <button type="submit">로그인</button>
         </form>
 

@@ -21,7 +21,13 @@ public class UserController {
 
     @GetMapping("/")
     public String home() {
-        return "home";
+        if (session.getAttribute("principal") != null) {
+            // 로그인 한 상태
+            return "redirect:/board/list";
+        } else {
+            // 로그인 안한 상태
+            return "redirect:/loginForm";
+        }
     }
 
     @GetMapping("/joinForm")
@@ -53,7 +59,6 @@ public class UserController {
             session.setAttribute("principal", user);
             return "redirect:/";
         }
-
     }
 
     @GetMapping("/logout")
