@@ -1,20 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <ul>
-        <c:choose>
-            <c:when test="${principal == null}">
+    <div class="link_box">
 
-                <a href="/">홈</a>
-                <a href="/loginForm">로그인 페이지</a>
-                <a href="/joinForm">회원가입 페이지</a>
+        <body>
+            <c:choose>
+                <c:when test="${principal == null}">
+                    <a href="/loginForm">로그인</a>&nbsp;&nbsp;
+                    <a href="/joinForm">회원가입</a>&nbsp;&nbsp;
+                </c:when>
 
-            </c:when>
+                <c:otherwise>
+                    <a href="/updateForm">회원정보 수정</a>&nbsp;&nbsp;
+                    <a href="/logout">로그아웃</a>&nbsp;&nbsp;
+                </c:otherwise>
+            </c:choose>
+    </div>
 
-            <c:otherwise>
-
-                <a href="/">홈 </a>
-                <a href="/updateForm">회원정보 수정</a>
-                <a href="/logout">로그아웃</a>
-
-            </c:otherwise>
-        </c:choose>
-    </ul>
+    <div class="center_box">

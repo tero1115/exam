@@ -10,8 +10,37 @@
             <title>게시판서버</title>
 
             <style>
+                .box1 {
+                    width: 400px;
 
+                    padding: 10px;
+                    padding-top: 0;
+                    border: 1px solid gray;
+                }
+
+                h1 {
+                    text-align: center;
+                    margin: 5px;
+                    background: #D8D8D8;
+                }
+
+                .footer {
+                    text-align: center;
+                    background: #D8D8D8;
+                }
+
+                .link_box {
+                    padding: 5px;
+                    padding-top: 0;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .center_box {
+                    display: flex;
+                    justify-content: center;
+                }
             </style>
         </head>
 
-        <body>
+        <div class="box1">
