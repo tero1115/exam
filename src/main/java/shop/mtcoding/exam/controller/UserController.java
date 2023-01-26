@@ -93,7 +93,7 @@ public class UserController {
         if (result == 1) {
             return "redirect:/";
         } else {
-            return "redirect:/";
+            return "redirect:/updateForm";
         }
     }
 }

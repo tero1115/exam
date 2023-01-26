@@ -3,9 +3,9 @@
 
     <hr />
     <div class="footer">
-        <i> Created by Limjisang</i> <br><br>
+        Created By Apple<br><br>
 
-        그린컴퓨터
+        부산진구 중앙대로 708
     </div>
     </body>
 
