@@ -11,4 +11,16 @@
     <select id="findByUsernameAndPassword" resultType="shop.mtcoding.exam.model.User">
       select * from user_tb where username = #{username} and password = #{password}
     </select>
+
+    <select id="findById" resultType="shop.mtcoding.exam.model.User">
+      select * from user_tb where id = #{id}
+    </select>
+
+    <update id="updateById">
+      update user_tb
+      set username = #{username},
+          password = #{password},
+          email = #{email}
+      where id = #{userId}
+    </update>
   </mapper>

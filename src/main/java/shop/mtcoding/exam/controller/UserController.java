@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -65,5 +66,34 @@ public class UserController {
     public String logout() {
         session.invalidate();
         return "redirect:/";
+    }
+
+    @GetMapping("/updateForm")
+    public String updateForm(Model model) {
+        // 로그인 되어있는지 확인
+        User principal = (User) session.getAttribute("principal");
+        if (principal == null) {
+            return "redirect:/notfound";
+        }
+        int userId = principal.getId();
+        User user = userRepository.findById(userId);
+        model.addAttribute("user", user);
+        return "user/updateForm";
+    }
+
+    @PostMapping("/user/update")
+    public String update(String username, int password, String email) {
+        User principal = (User) session.getAttribute("principal");
+        if (principal == null) {
+            return "redirect:/notfound";
+        }
+        int userId = principal.getId();
+
+        int result = userRepository.updateById(userId, username, password, email);
+        if (result == 1) {
+            return "redirect:/";
+        } else {
+            return "redirect:/";
+        }
     }
 }
